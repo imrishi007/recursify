@@ -45,13 +45,4 @@ npm run preview
 - CSS Modules
 - Local Storage (bookmarks & progress)
 
-## 🎨 Design Philosophy
-
-- **Typography-first** approach
-- **Generous spacing** for easy reading
-- **High contrast** for accessibility
-- **Zero distractions** - content is king
-
----
-
 **Built with ❤️ by Rishi Raval**
