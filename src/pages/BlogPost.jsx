@@ -12,6 +12,7 @@ import MaxConsecutiveOnesIII from './posts/max-consecutive-ones-iii';
 import ReverseInteger from './posts/reverse-integer';
 import SudokuSolver from './posts/sudoku-solver';
 import IncrementSubmatricesByOne from './posts/increment-submatrices-by-one';
+import ZigZagConversion from './posts/zigzag-conversion';
 
 // Map slugs to components
 const postComponents = {
@@ -21,6 +22,7 @@ const postComponents = {
   'reverse-integer': ReverseInteger,
   'sudoku-solver': SudokuSolver,
   'increment-submatrices-by-one': IncrementSubmatricesByOne,
+  'zigzag-conversion': ZigZagConversion,
 };
 
 const BlogPost = () => {

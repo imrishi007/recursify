@@ -216,6 +216,80 @@
   border-left: 4px solid var(--accent);
 }
 
+/* Algorithm Steps Styling */
+.algorithm-steps {
+  margin: var(--spacing-lg) 0;
+}
+
+.algorithm-steps .step {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-md);
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+  line-height: 1.7;
+}
+
+.algorithm-steps .bullet {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.1em;
+  flex-shrink: 0;
+}
+
+.algorithm-steps .sub-steps {
+  margin-top: var(--spacing-sm);
+}
+
+.algorithm-steps .sub-step {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: var(--spacing-sm);
+  padding-left: var(--spacing-sm);
+  line-height: 1.6;
+}
+
+.algorithm-steps .sub-bullet {
+  color: var(--text-primary);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.algorithm-steps .nested-steps {
+  margin-top: 0.4rem;
+}
+
+.algorithm-steps .nested-step {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.4rem;
+  padding-left: var(--spacing-md);
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.algorithm-steps .nested-bullet {
+  color: var(--text-tertiary);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.example-box {
+  margin: var(--spacing-lg) 0;
+  padding: var(--spacing-lg);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.example-box pre {
+  margin: 0;
+  color: var(--text-primary);
+}
+
 .post-navigation {
   display: grid;
   grid-template-columns: 1fr 1fr;

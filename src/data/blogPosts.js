@@ -65,6 +65,17 @@ export const blogPosts = [
     tags: ["Array", "Matrix", "Prefix Sum"],
     readTime: 8,
     leetcodeUrl: "https://leetcode.com/problems/increment-submatrices-by-one"
+  },
+  {
+    id: 7,
+    number: 6,
+    title: "ZigZag Conversion",
+    difficulty: "Medium",
+    excerpt: "Write a string in zigzag pattern across given rows and return it by reading row-wise from left to right.",
+    slug: "zigzag-conversion",
+    tags: ["String", "Simulation"],
+    readTime: 7,
+    leetcodeUrl: "https://leetcode.com/problems/zigzag-conversion"
   }
 ];
 
