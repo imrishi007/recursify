@@ -37,12 +37,12 @@ const FilterBar = ({ filters, setFilters, totalProblems, filteredCount }) => {
         </select>
       </div>
 
-      <div className="filter-section">
+      <div className="filter-section search-section">
         <input
           type="text"
           className="filter-search"
           placeholder="Search problems..."
-          value={filters.search || ''}
+          value={filters.search}
           onChange={(e) => setFilters({ ...filters, search: e.target.value })}
         />
       </div>
