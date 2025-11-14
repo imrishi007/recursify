@@ -1,0 +1,232 @@
+/* Prism.js Blue-Purple Theme (One Dark Pro / 1984 inspired) */
+
+/* Light Mode Code Highlighting - Blue/Purple Theme */
+:root {
+  --code-bg-light: #FAFBFC;
+  --code-text: #2E3440;
+  --code-comment: #7C88A1;
+  --code-keyword: #5E81AC;
+  --code-function: #8957E5;
+  --code-string: #6366F1;
+  --code-number: #A855F7;
+  --code-operator: #667085;
+  --code-variable: #7C3AED;
+  --code-class: #9333EA;
+}
+
+/* Dark Mode Code Highlighting - Deep Blue/Purple Theme */
+[data-theme="dark"] {
+  --code-bg-dark: #1E1E2E;
+  --code-text: #CDD6F4;
+  --code-comment: #6C7086;
+  --code-keyword: #89B4FA;
+  --code-function: #B4BEFE;
+  --code-string: #A6E3A1;
+  --code-number: #CBA6F7;
+  --code-operator: #89DCEB;
+  --code-variable: #F5C2E7;
+  --code-class: #F9E2AF;
+}
+
+.code-block-container {
+  position: relative;
+  margin: 1.5rem 0;
+}
+
+.code-block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Language tabs for multi-language code blocks */
+.language-tabs {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.language-tab {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  color: var(--text-secondary);
+  background-color: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.language-tab:hover {
+  color: var(--text-primary);
+  background-color: var(--bg-secondary);
+}
+
+.language-tab.active {
+  color: var(--accent);
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(99, 102, 241, 0.1));
+  font-weight: 700;
+}
+
+[data-theme="dark"] .language-tab.active {
+  color: #B4BEFE;
+  background: linear-gradient(135deg, rgba(180, 190, 254, 0.15), rgba(203, 166, 247, 0.15));
+}
+
+.code-language {
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.copy-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.copy-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--accent);
+}
+
+.copy-btn.copied {
+  color: var(--easy);
+  border-color: var(--easy);
+}
+
+pre[class*="language-"] {
+  margin: 0;
+  border-radius: 0 0 8px 8px;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  padding: 1.25rem;
+  overflow-x: auto;
+  background-color: var(--code-bg-light) !important;
+}
+
+[data-theme="dark"] pre[class*="language-"] {
+  background-color: var(--code-bg-dark) !important;
+}
+
+code[class*="language-"] {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  color: var(--code-text);
+  font-feature-settings: 'liga' 1, 'calt' 1; /* Enable ligatures for Fira Code */
+}
+
+/* Prism Token Styles - Blue/Purple Theme */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--code-comment);
+  font-style: italic;
+}
+
+.token.keyword,
+.token.tag,
+.token.boolean,
+.token.constant,
+.token.deleted,
+.token.important {
+  color: var(--code-keyword);
+  font-weight: 600;
+}
+
+.token.function,
+.token.function-variable {
+  color: var(--code-function);
+  font-weight: 600;
+}
+
+.token.class-name,
+.token.maybe-class-name {
+  color: var(--code-class);
+  font-weight: 600;
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.inserted {
+  color: var(--code-string);
+}
+
+.token.number {
+  color: var(--code-number);
+  font-weight: 500;
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+  color: var(--code-operator);
+}
+
+.token.punctuation,
+.token.selector {
+  color: var(--text-tertiary);
+}
+
+.token.builtin,
+.token.property,
+.token.attr-name {
+  color: var(--code-variable);
+}
+
+.token.variable {
+  color: var(--code-variable);
+}
+
+.token.namespace {
+  opacity: 0.8;
+}
+
+/* Line highlighting */
+.line-highlight {
+  background: rgba(139, 92, 246, 0.1);
+  border-left: 3px solid var(--code-function);
+  margin: 0 calc(-1 * 1.25rem);
+  padding: 0 1.25rem;
+}
+
+/* Scrollbar for code blocks */
+pre[class*="language-"]::-webkit-scrollbar {
+  height: 8px;
+}
+
+pre[class*="language-"]::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: 0 0 8px 8px;
+}
+
+pre[class*="language-"]::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+pre[class*="language-"]::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
