@@ -38,13 +38,24 @@ const FilterBar = ({ filters, setFilters, totalProblems, filteredCount }) => {
       </div>
 
       <div className="filter-section search-section">
-        <input
-          type="text"
-          className="filter-search"
-          placeholder="Search problems..."
-          value={filters.search}
-          onChange={(e) => setFilters({ ...filters, search: e.target.value })}
-        />
+        <div className="search-wrapper">
+          <input
+            type="text"
+            className="filter-search"
+            placeholder="Search problems..."
+            value={filters.search}
+            onChange={(e) => setFilters({ ...filters, search: e.target.value })}
+          />
+          {filters.search && (
+            <button
+              className="clear-search"
+              onClick={() => setFilters({ ...filters, search: '' })}
+              aria-label="Clear search"
+            >
+              ✕
+            </button>
+          )}
+        </div>
       </div>
 
       <div className="filter-results">

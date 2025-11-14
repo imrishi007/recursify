@@ -36,6 +36,11 @@
   text-align: center;
   padding: var(--spacing-2xl) var(--spacing-md);
   color: var(--text-tertiary);
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .no-results svg {

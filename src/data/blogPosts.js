@@ -97,8 +97,8 @@ export const filterPosts = (posts, filters) => {
   }
   
   // Filter by search query
-  if (filters.search) {
-    const query = filters.search.toLowerCase();
+  if (filters.search && filters.search.trim() !== '') {
+    const query = filters.search.toLowerCase().trim();
     filtered = filtered.filter(post => 
       post.title.toLowerCase().includes(query) ||
       post.excerpt.toLowerCase().includes(query) ||
