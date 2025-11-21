@@ -76,6 +76,17 @@ export const blogPosts = [
     tags: ["String", "Simulation"],
     readTime: 7,
     leetcodeUrl: "https://leetcode.com/problems/zigzag-conversion"
+  },
+  {
+    id: 8,
+    number: 1930,
+    title: "Unique Length-3 Palindromic Subsequences",
+    difficulty: "Medium",
+    excerpt: "Find the number of unique palindromic subsequences of length 3 in a string by tracking first and last occurrences.",
+    slug: "unique-length-3-palindrome",
+    tags: ["String", "Hash Table", "Prefix Sum"],
+    readTime: 8,
+    leetcodeUrl: "https://leetcode.com/problems/unique-length-3-palindromic-subsequences"
   }
 ];
 

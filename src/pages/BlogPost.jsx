@@ -13,6 +13,7 @@ import ReverseInteger from './posts/reverse-integer';
 import SudokuSolver from './posts/sudoku-solver';
 import IncrementSubmatricesByOne from './posts/increment-submatrices-by-one';
 import ZigZagConversion from './posts/zigzag-conversion';
+import UniqueLength3Palindrome from './posts/unique-length-3-palindrome';
 
 // Map slugs to components
 const postComponents = {
@@ -23,6 +24,7 @@ const postComponents = {
   'sudoku-solver': SudokuSolver,
   'increment-submatrices-by-one': IncrementSubmatricesByOne,
   'zigzag-conversion': ZigZagConversion,
+  'unique-length-3-palindrome': UniqueLength3Palindrome,
 };
 
 const BlogPost = () => {
