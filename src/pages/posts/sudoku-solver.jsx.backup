@@ -137,9 +137,35 @@ public:
 
   return (
     <div className="post-content">
-      <section>
+      {/* ---------------- HEADER SECTION ---------------- */}
+      <header className="post-header">
+        <div className="breadcrumb">
+          <a href="/">← Back to Problems</a>
+        </div>
+        <div className="problem-meta">
+          <span className="problem-number">37</span>
+          <span className="difficulty-badge difficulty-hard">Hard</span>
+          <div className="leetcode-link">
+            <a href="https://leetcode.com/problems/sudoku-solver/" target="_blank" rel="noopener noreferrer">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818c.51.515 1.043.944 1.654 1.207a5.021 5.021 0 0 0 2.004.388 5.086 5.086 0 0 0 2.013-.403 5.484 5.484 0 0 0 1.702-1.211L11.7 16.4l7.312-7.312c.196-.196.4-.4.62-.606.203-.21.35-.467.349-.738.015-.282-.074-.558-.238-.792a1.348 1.348 0 0 0-.307-.418c-.37-.365-.936-.609-1.512-.609-.576 0-1.141.244-1.512.609L12.6 10.345 8.344 6.088a.915.915 0 0 1-.013-1.292.914.914 0 0 1 1.292-.013l4.012 4.013a.914.914 0 0 1 .013 1.292.915.915 0 0 1-1.292.013L8.344 6.088Z" fill="#FFA116"/>
+              </svg>
+              View on LeetCode
+            </a>
+          </div>
+        </div>
+        <h1 className="post-title">Sudoku Solver</h1>
+        <div className="post-tags">
+          <span className="tag">Backtracking</span>
+          <span className="tag">Matrix</span>
+          <span className="tag">DFS</span>
+        </div>
+      </header>
+
+      {/* ---------------- PROBLEM STATEMENT ---------------- */}
+      <div className="content-section">
         <h2>Problem Statement</h2>
-        <div className="content-box">
+        <div className="problem-box glass">
           <p>
             Write a program to solve a Sudoku puzzle by filling the empty cells.
           </p>
@@ -155,11 +181,12 @@ public:
             The <code>'.'</code> character indicates empty cells.
           </p>
         </div>
-      </section>
+      </div>
 
-      <section>
+      {/* ---------------- EXAMPLES ---------------- */}
+      <div className="content-section">
         <h2>Examples</h2>
-        <div className="content-box">
+        <div className="example-box glass">
           <h3>Example 1:</h3>
           <pre style={{ overflowX: 'auto', whiteSpace: 'pre-wrap' }}>
             <code>
@@ -189,17 +216,18 @@ Explanation: The input board is shown above and the only valid solution is shown
             </code>
           </pre>
         </div>
-      </section>
+      </div>
 
-      <section>
+      {/* ---------------- INTUITION ---------------- */}
+      <div className="content-section">
         <h2>Intuition</h2>
-        <div className="content-box">
+        <div className="insights-box glass">
           <p>
             Here's how I approached the Sudoku solver. It's a classic backtracking problem where we try to fill the board step-by-step, and whenever we hit a dead end (like no number can be placed safely), we backtrack and try a different number in the previous cells.
           </p>
           
           <p>
-            First, I made a function called <code>isSafe</code>. As the name suggests, this function checks whether it's safe to place a digit in a particular cell. Sudoku has a few simple rules — each digit from <code>1</code> to <code>9</code> must appear only once in every row, column, and the <code>3x3</code> grid it belongs to.
+            First, I made a function called <code>isSafe</code>. As the name suggests, this function checks whether it’s safe to place a digit in a particular cell. Sudoku has a few simple rules — each digit from <code>1</code> to <code>9</code> must appear only once in every row, column, and the <code>3x3</code> grid it belongs to.
           </p>
           <p>
             So, in the <code>isSafe</code> function, I just checked these three conditions:
@@ -214,17 +242,18 @@ Explanation: The input board is shown above and the only valid solution is shown
             Now comes the main part — the <code>helper</code> function. This is the recursive function that actually tries to solve the board using backtracking.
           </p>
         </div>
-      </section>
+      </div>
 
-      <section>
+      {/* ---------------- ALGORITHM STEPS ---------------- */}
+      <div className="content-section">
         <h2>Algorithm Steps</h2>
-        <div className="content-box">
+        <div className="algorithm-steps glass">
           <h3><code>helper</code> function logic:</h3>
           <ol>
             <li>If <code>row</code> becomes <code>9</code>, it means we've completed all rows and solved the board, so I just return <code>true</code>.</li>
             <li>Then I calculated the next cell to move to. If the current column reaches the end (<code>col == 8</code>), then I move to the next row and reset the column to <code>0</code>.</li>
-            <li>Now if the current cell is already filled (i.e., not a <code>.</code>), I don't touch it — I just call the <code>helper</code> on the next cell directly.</li>
-            <li>But if it's empty, I try placing all digits from <code>'1'</code> to <code>'9'</code> in that cell. For every digit, I first check if it's safe to place using the <code>isSafe</code> function. If it is, I place the digit and call the <code>helper</code> for the next cell.</li>
+            <li>Now if the current cell is already filled (i.e., not a <code>.</code>), I don’t touch it — I just call the <code>helper</code> on the next cell directly.</li>
+            <li>But if it's empty, I try placing all digits from <code>'1'</code> to <code>'9'</code> in that cell. For every digit, I first check if it’s safe to place using the <code>isSafe</code> function. If it is, I place the digit and call the <code>helper</code> for the next cell.</li>
             <li>If that leads to a solution, I just return <code>true</code>.</li>
             <li>If it doesn't, I backtrack — reset the cell back to <code>.</code> and try the next digit.</li>
           </ol>
@@ -232,9 +261,10 @@ Explanation: The input board is shown above and the only valid solution is shown
             Finally, the <code>solveSudoku</code> function is just the main function that kicks things off. It calls <code>helper(board, 0, 0)</code> to start from the top-left cell.
           </p>
         </div>
-      </section>
+      </div>
 
-      <section>
+      {/* ---------------- CODE IMPLEMENTATION ---------------- */}
+      <div className="content-section">
         <h2>Code Implementation</h2>
         <MultiLanguageCode
           codes={{
@@ -243,39 +273,40 @@ Explanation: The input board is shown above and the only valid solution is shown
             java: javaCode,
           }}
         />
-      </section>
+      </div>
 
-      <section>
+      {/* ---------------- COMPLEXITY ANALYSIS ---------------- */}
+      <div className="content-section">
         <h2>Complexity Analysis</h2>
-        <div className="content-box">
+        <div className="complexity-analysis glass">
           <ul>
             <li>
               <strong>Time Complexity:</strong> O(9<sup>N</sup>), where N is the number of empty cells in the Sudoku board.
               <p>
-                It's kind of tricky, because we are dealing with backtracking here. So first of all, at every empty cell, we are trying out digits from '1' to '9'. So for each empty cell, we have 9 choices in the worst case. And we can have up to 81 cells in a 9x9 board. That makes it feel like the time complexity could go up to O(9<sup>81</sup>) in the absolute worst case.
+                It’s kind of tricky, because we are dealing with backtracking here. So first of all, at every empty cell, we are trying out digits from '1' to '9'. So for each empty cell, we have 9 choices in the worst case. And we can have up to 81 cells in a 9x9 board. That makes it feel like the time complexity could go up to O(9<sup>81</sup>) in the absolute worst case.
               </p>
               <p>
-                But wait... it's actually much better in real scenarios. Because we're not just blindly trying all 9 numbers in every cell. We only place a number if it satisfies the Sudoku conditions – meaning the number doesn't already exist in that row, column, or the 3x3 subgrid. This massively cuts down our actual number of recursive calls, since most digits are pruned out early by the <code>isSafe</code> function.
+                But wait... it's actually much better in real scenarios. Because we’re not just blindly trying all 9 numbers in every cell. We only place a number if it satisfies the Sudoku conditions – meaning the number doesn’t already exist in that row, column, or the 3x3 subgrid. This massively cuts down our actual number of recursive calls, since most digits are pruned out early by the <code>isSafe</code> function.
               </p>
               <p>
-                Still, if we want to talk about the upper bound, it's safe to say that the time complexity is O(9<sup>N</sup>), where N is the number of empty cells in the Sudoku board. Why? Because for each empty cell, we try at most 9 options, and for each of those, we recurse into the next empty cell.
+                Still, if we want to talk about the upper bound, it’s safe to say that the time complexity is O(9<sup>N</sup>), where N is the number of empty cells in the Sudoku board. Why? Because for each empty cell, we try at most 9 options, and for each of those, we recurse into the next empty cell.
               </p>
               <p>
                 The <code>isSafe</code> function itself runs in constant time, it just checks the row, column, and the 3x3 box, all of which are fixed size (at most 9 elements each). So its contribution to the time complexity is also constant for each call.
               </p>
               <p>
-                So overall, the time complexity becomes O(9<sup>N</sup>), and in the worst theoretical case where the board is completely empty, that's O(9<sup>81</sup>). But again, practically, it runs much faster due to pruning and early exits.
+                So overall, the time complexity becomes O(9<sup>N</sup>), and in the worst theoretical case where the board is completely empty, that’s O(9<sup>81</sup>). But again, practically, it runs much faster due to pruning and early exits.
               </p>
             </li>
             <li>
               <strong>Space Complexity:</strong> O(1) (excluding recursion stack).
               <p>
-                The board is always 9x9, and we aren't using any extra arrays or hashsets. The only extra space we use is due to recursion, which at most can go 81 levels deep, so O(81), which is still constant in terms of Big-O.
+                The board is always 9x9, and we aren’t using any extra arrays or hashsets. The only extra space we use is due to recursion, which at most can go 81 levels deep, so O(81), which is still constant in terms of Big-O.
               </p>
             </li>
           </ul>
         </div>
-      </section>
+      </div>
     </div>
   );
 };

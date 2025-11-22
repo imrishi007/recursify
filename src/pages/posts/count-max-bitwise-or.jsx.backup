@@ -124,21 +124,51 @@ public:
 
   return (
     <div className="post-content">
-      <section>
+      {/* ---------------- HEADER SECTION ---------------- */}
+      <header className="post-header">
+        <div className="breadcrumb">
+          <a href="/">← Back to Problems</a>
+        </div>
+        <div className="problem-meta">
+          <span className="problem-number">2044</span>
+          <span className="difficulty-badge difficulty-medium">Medium</span>
+          <div className="leetcode-link">
+            <a href="https://leetcode.com/problems/count-number-of-maximum-bitwise-or-subsets/" target="_blank" rel="noopener noreferrer">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818c.51.515 1.043.944 1.654 1.207a5.021 5.021 0 0 0 2.004.388 5.086 5.086 0 0 0 2.013-.403 5.484 5.484 0 0 0 1.702-1.211L11.7 16.4l7.312-7.312c.196-.196.4-.4.62-.606.203-.21.35-.467.349-.738.015-.282-.074-.558-.238-.792a1.348 1.348 0 0 0-.307-.418c-.37-.365-.936-.609-1.512-.609-.576 0-1.141.244-1.512.609L12.6 10.345 8.344 6.088a.915.915 0 0 1-.013-1.292.914.914 0 0 1 1.292-.013l4.012 4.013a.914.914 0 0 1 .013 1.292.915.915 0 0 1-1.292.013L8.344 6.088Z" fill="#FFA116"/>
+              </svg>
+              View on LeetCode
+            </a>
+          </div>
+        </div>
+        <h1 className="post-title">Count Number of Maximum Bitwise-OR Subsets</h1>
+        <div className="post-tags">
+          <span className="tag">Array</span>
+          <span className="tag">Bit Manipulation</span>
+          <span className="tag">Backtracking</span>
+          <span className="tag">Dynamic Programming</span>
+          <span className="tag">Recursion</span>
+          <span className="tag">Subset</span>
+        </div>
+      </header>
+
+      {/* ---------------- PROBLEM STATEMENT ---------------- */}
+      <div className="content-section">
         <h2>Problem Statement</h2>
-        <div className="content-box">
+        <div className="problem-box glass">
           <p>
             This problem states that we have to find the <code>maximum possible bitwise OR of a subset of an array called &lt;nums&gt;</code>, and next all we have to do is return the <code>number of subsets whose OR is equal to the total OR of the array</code>.
           </p>
           <p>
-            I am assuming you know basic concepts of logical operations such as OR, NOT, AND, XOR. If you don't know I highly recommend to learn it. This is a basic recursion problem which can be solved by finding all the subsets of the array nums. Well, the intuition is really simple, all you have to do is find the total OR of all the numbers in nums array and store it in a variable. All you do now is find all the subsets of the array nums and calculate their OR as we move further. We will use recursion to do this.
+            I am assuming you know basic concepts of logical operations such as OR, NOT, AND, XOR. If you don’t know I highly recommend to learn it. This is a basic recursion problem which can be solved by finding all the subsets of the array nums. Well, the intuition is really simple, all you have to do is find the total OR of all the numbers in nums array and store it in a variable. All you do now is find all the subsets of the array nums and calculate their OR as we move further. We will use recursion to do this.
           </p>
         </div>
-      </section>
+      </div>
 
-      <section>
+      {/* ---------------- INTUITION ---------------- */}
+      <div className="content-section">
         <h2>Intuition & Recursion Walkthrough</h2>
-        <div className="content-box">
+        <div className="insights-box glass">
           <p>
             Let us first understand how recursion would work by looking at an example –
           </p>
@@ -148,16 +178,16 @@ public:
           </div>
 
           <p>
-            In the above diagram, we can see a tree diagram. Now, many would wonder what is TAKE and NOT TAKE??!! I'll try to explain in simple words. Well, it's pretty simple to understand- We want to find OR of all possible subsets isn't it?? How can that happen?? Well, we can just make a recursive function that can calculate all the subsets.
+            In the above diagram, we can see a tree diagram. Now, many would wonder what is TAKE and NOT TAKE??!! I’ll try to explain in simple words. Well, it’s pretty simple to understand- We want to find OR of all possible subsets isn’t it?? How can that happen?? Well, we can just make a recursive function that can calculate all the subsets.
           </p>
           <p>
             What does <code>TAKE</code> here mean?? It just conveys that we TAKE that element into consideration – For example in the above array there are two elements 1,2. Their subsets would have $2^n = 2^2 = 4$ subsets {`->`} `[]`, `[1]`, `[2]`, `[1,2]`.
           </p>
           <p>
-            We will of course start from the first element – 1. Here we have two choice – Either take it, or just skip it and move to the next element. Let's say we don't take it, we get an empty subset which is a part of power set.
+            We will of course start from the first element – 1. Here we have two choice – Either take it, or just skip it and move to the next element. Let’s say we don’t take it, we get an empty subset which is a part of power set.
           </p>
           <p>
-            Now, we haven't taken one, let us move to the next element –{'>'} 2.
+            Now, we haven’t taken one, let us move to the next element –{'>'} 2.
           </p>
           <p>
             Here we have two choices again – Take it or leave it. Leaving it again results in an empty subset so we backtrack after doing that.
@@ -169,33 +199,35 @@ public:
             If we take the element 2 we now have an element to calculate OR with. We calculate it and then backtrack as no further elements can be explored. Again, since we have calculated all possible scenarios for NOT TAKING 1, we backtrack and now, we consider TAKING 1.
           </p>
           <p>
-            We now repeat the same steps, take 1, OR it with 0 and move further -{'>'} Take or not take 2?? Taking it gives us another subset {`{1,2}`}. And this marks end of 1's recursion tree.
+            We now repeat the same steps, take 1, OR it with 0 and move further -{'>'} Take or not take 2?? Taking it gives us another subset {`{1,2}`}. And this marks end of 1’s recursion tree.
           </p>
           <p>
             We will do similar steps with all the elements of array and that is how we calculate OR of all!! Simple right?!
           </p>
         </div>
-      </section>
+      </div>
 
-      <section>
+      {/* ---------------- DP INTRO ---------------- */}
+      <div className="content-section">
         <h2>Introducing Dynamic Programming (Memoization)</h2>
-        <div className="content-box">
+        <div className="algorithm-steps glass">
           <p>
             Now that you understand how recursion works, let me introduce to a concept known as <code>DYNAMIC PROGRAMMING</code>. It is really simple to be honest!!!! We saw in the above example, we were calculating some cases multiple times unnecessarily, for example we calculated subset 2 multiple times, that wastes a lot of time especially when you have thousands of elements in an array!!!
           </p>
           <p>
-            This is where concept of <code>memoization</code> kicks in!! All that we do now is make an array called <code>DP</code> which stores the results we have already calculated before!! THAT'S ITT!!!
+            This is where concept of <code>memoization</code> kicks in!! All that we do now is make an array called <code>DP</code> which stores the results we have already calculated before!! THAT’S ITT!!!
           </p>
           <p>
-            We had to calculate unnecessary cases before, and now we don't have to do so!! That's the idea of MEMOIZATION. Of course we had to compromise with <code>Space complexity</code> but it helped us reduce the <code>time complexity</code>, we must compromise one of the parameters in order to efficiently increase other, that's universal truth lol.
+            We had to calculate unnecessary cases before, and now we don’t have to do so!! That’s the idea of MEMOIZATION. Of course we had to compromise with <code>Space complexity</code> but it helped us reduce the <code>time complexity</code>, we must compromise one of the parameters in order to efficiently increase other, that’s universal truth lol.
           </p>
           <p>
             Coming to this problem, I explain most of the part on how it works. Briefly – we find all the subsets, calculate their ORs and then at each step, we compare the current OR with max, we add it to the answer!! Simple as that!!
           </p>
         </div>
-      </section>
+      </div>
 
-      <section>
+      {/* ---------------- CODE IMPLEMENTATION ---------------- */}
+      <div className="content-section">
         <h2>Code Implementation</h2>
         <MultiLanguageCode
           codes={{
@@ -204,11 +236,12 @@ public:
             java: javaCode,
           }}
         />
-      </section>
+      </div>
 
-      <section>
+      {/* ---------------- COMPLEXITY ANALYSIS ---------------- */}
+      <div className="content-section">
         <h2>Time & Space Complexity: Let's Break It Down</h2>
-        <div className="content-box">
+        <div className="complexity-analysis glass">
           <p>
             Alright, let's dive into the performance of these two approaches – the straightforward recursive way versus our clever memoized (Dynamic Programming) solution. It's all about how much time they take and how much memory they gobble up.
           </p>
@@ -249,7 +282,7 @@ public:
             </li>
           </ul>
         </div>
-      </section>
+      </div>
     </div>
   );
 };

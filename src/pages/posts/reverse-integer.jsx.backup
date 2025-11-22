@@ -81,9 +81,34 @@ public:
 
   return (
     <div className="post-content">
-      <section>
+      {/* ---------------- HEADER SECTION ---------------- */}
+      <header className="post-header">
+        <div className="breadcrumb">
+          <a href="/">← Back to Problems</a>
+        </div>
+        <div className="problem-meta">
+          <span className="problem-number">7</span>
+          <span className="difficulty-badge difficulty-medium">Medium</span>
+          <div className="leetcode-link">
+            <a href="https://leetcode.com/problems/reverse-integer" target="_blank" rel="noopener noreferrer">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818c.51.515 1.043.944 1.654 1.207a5.021 5.021 0 0 0 2.004.388 5.086 5.086 0 0 0 2.013-.403 5.484 5.484 0 0 0 1.702-1.211L11.7 16.4l7.312-7.312c.196-.196.4-.4.62-.606.203-.21.35-.467.349-.738.015-.282-.074-.558-.238-.792a1.348 1.348 0 0 0-.307-.418c-.37-.365-.936-.609-1.512-.609-.576 0-1.141.244-1.512.609L12.6 10.345 8.344 6.088a.915.915 0 0 1-.013-1.292.914.914 0 0 1 1.292-.013l4.012 4.013a.914.914 0 0 1 .013 1.292.915.915 0 0 1-1.292.013L8.344 6.088Z" fill="#FFA116"/>
+              </svg>
+              View on LeetCode
+            </a>
+          </div>
+        </div>
+        <h1 className="post-title">Reverse Integer</h1>
+        <div className="post-tags">
+          <span className="tag">Math</span>
+          <span className="tag">Integer</span>
+        </div>
+      </header>
+
+      {/* ---------------- PROBLEM STATEMENT ---------------- */}
+      <div className="content-section">
         <h2>Problem Statement</h2>
-        <div className="content-box">
+        <div className="problem-box glass">
           <p>
             Given a signed 32-bit integer <code>x</code>, return <code>x</code> with its digits reversed.
             If reversing <code>x</code> causes the value to go outside the signed 32-bit integer range
@@ -93,39 +118,41 @@ public:
             <strong>Assume the environment does not allow you to store 64-bit integers (signed or unsigned).</strong>
           </p>
         </div>
-      </section>
+      </div>
 
-      <section>
+      {/* ---------------- EXAMPLES ---------------- */}
+      <div className="content-section">
         <h2>Examples</h2>
-        <div className="content-box">
+        <div className="example-box glass">
           <h3>Example 1:</h3>
           <pre><code>Input: x = 123
 Output: 321</code></pre>
         </div>
 
-        <div className="content-box">
+        <div className="example-box glass">
           <h3>Example 2:</h3>
           <pre><code>Input: x = -123
 Output: -321</code></pre>
         </div>
 
-        <div className="content-box">
+        <div className="example-box glass">
           <h3>Example 3:</h3>
           <pre><code>Input: x = 120
 Output: 21</code></pre>
         </div>
 
-        <div className="content-box">
+        <div className="example-box glass">
           <h3>Example 4:</h3>
           <pre><code>Input: x = 1534236469
 Output: 0
 Explanation: 1534236469 reversed would be 9646324351, which exceeds 32-bit range</code></pre>
         </div>
-      </section>
+      </div>
 
-      <section>
+      {/* ---------------- APPROACH 1: STRING CONVERSION ---------------- */}
+      <div className="content-section">
         <h2>Approach 1: String Conversion</h2>
-        <div className="content-box">
+        <div className="insights-box glass">
           <p>
             Convert the integer to a string, reverse it, and convert back. This approach is intuitive but less efficient due to string operations.
           </p>
@@ -136,20 +163,22 @@ Explanation: 1534236469 reversed would be 9646324351, which exceeds 32-bit range
             </ul>
           </div>
         </div>
-      </section>
+      </div>
 
-      <section>
+      {/* ---------------- APPROACH 2: MATHEMATICAL (OPTIMAL) ---------------- */}
+      <div className="content-section">
         <h2>Approach 2: Mathematical Approach (Optimal)</h2>
-        <div className="content-box">
+        <div className="insights-box glass">
           <p>
             Use mathematical operations to reverse the digits one by one. This approach is more efficient and handles overflow conditions elegantly.
           </p>
         </div>
-      </section>
+      </div>
 
-      <section>
+      {/* ---------------- ALGORITHM STEPS ---------------- */}
+      <div className="content-section">
         <h2>Algorithm Steps</h2>
-        <div className="content-box">
+        <div className="algorithm-steps glass">
           <ol>
             <li>Initialize <code>result</code> as 0.</li>
             <li>While <code>x</code> is not 0, extract the last digit using modulo 10.</li>
@@ -159,11 +188,12 @@ Explanation: 1534236469 reversed would be 9646324351, which exceeds 32-bit range
             <li>Return the <code>result</code> with proper sign.</li>
           </ol>
         </div>
-      </section>
+      </div>
 
-      <section>
+      {/* ---------------- VISUAL EXPLANATION ---------------- */}
+      <div className="content-section">
         <h2>Visual Explanation</h2>
-        <div className="content-box">
+        <div className="visual-explanation glass">
           <p>Let's trace through the optimal solution with <code>x = 123</code>:</p>
           <div className="trace-steps">
             <div className="trace-step">
@@ -183,9 +213,10 @@ Explanation: 1534236469 reversed would be 9646324351, which exceeds 32-bit range
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      <section>
+      {/* ---------------- CODE IMPLEMENTATION ---------------- */}
+      <div className="content-section">
         <h2>Code Implementation (Optimal)</h2>
         <MultiLanguageCode
           codes={{
@@ -194,11 +225,12 @@ Explanation: 1534236469 reversed would be 9646324351, which exceeds 32-bit range
             java: javaCode,
           }}
         />
-      </section>
+      </div>
 
-      <section>
+      {/* ---------------- COMPLEXITY ANALYSIS ---------------- */}
+      <div className="content-section">
         <h2>Complexity Analysis</h2>
-        <div className="content-box">
+        <div className="complexity-analysis glass">
           <ul>
             <li>
               <strong>Time Complexity:</strong> O(log n) - Number of digits in the integer.
@@ -208,11 +240,12 @@ Explanation: 1534236469 reversed would be 9646324351, which exceeds 32-bit range
             </li>
           </ul>
         </div>
-      </section>
+      </div>
 
-      <section>
+      {/* ---------------- KEY INSIGHTS ---------------- */}
+      <div className="content-section">
         <h2>Key Insights</h2>
-        <div className="content-box">
+        <div className="insights-box glass">
           <ul>
             <li><strong>Overflow Detection:</strong> Check for overflow before multiplication, not after.</li>
             <li><strong>32-bit Range:</strong> [-2³¹, 2³¹ - 1] = [-2147483648, 2147483647].</li>
@@ -221,11 +254,12 @@ Explanation: 1534236469 reversed would be 9646324351, which exceeds 32-bit range
             <li><strong>Sign Handling:</strong> Process absolute value and apply sign at the end.</li>
           </ul>
         </div>
-      </section>
+      </div>
 
-      <section>
+      {/* ---------------- FOLLOW-UP QUESTIONS ---------------- */}
+      <div className="content-section">
         <h2>Follow-up Questions</h2>
-        <div className="content-box">
+        <div className="followup-box glass">
           <ol>
             <li>What if we needed to reverse a 64-bit integer instead?</li>
             <li>How would you modify this to reverse only the last k digits?</li>
@@ -233,7 +267,7 @@ Explanation: 1534236469 reversed would be 9646324351, which exceeds 32-bit range
             <li>How would you handle floating-point numbers?</li>
           </ol>
         </div>
-      </section>
+      </div>
     </div>
   );
 };
