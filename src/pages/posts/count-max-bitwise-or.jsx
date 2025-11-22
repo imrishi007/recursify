@@ -144,7 +144,7 @@ public:
           </p>
           
           <div className="image-container" style={{ margin: '20px 0', textAlign: 'center' }}>
-            
+            <img src="/2044_rec.png" alt="Recursion Tree Diagram" style={{ maxWidth: '100%', height: 'auto' }} />
           </div>
 
           <p>
