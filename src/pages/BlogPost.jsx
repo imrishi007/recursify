@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { getPostBySlug, blogPosts } from '../data/blogPosts';
 import { useBookmarks, useProgress } from '../hooks/useLocalStorage';
 import CodeBlock, { MultiLanguageCode } from '../components/CodeBlock/CodeBlock';
+import ScrollToTop from '../components/ScrollToTop/ScrollToTop';
 import './BlogPost.css';
 
 // Import all blog post components
@@ -142,6 +143,7 @@ const BlogPost = () => {
           )}
         </nav>
       </div>
+      <ScrollToTop />
     </div>
   );
 };

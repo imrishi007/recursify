@@ -15,6 +15,15 @@ const Navbar = () => {
         </Link>
 
         <div className="nav-actions">
+          <a
+            href="https://rishipraval.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-btn portfolio-link"
+            title="Visit Portfolio"
+          >
+            <img src="/logo1.jpeg" alt="Profile" className="profile-img" />
+          </a>
           <button
             className="nav-btn theme-toggle"
             onClick={toggleTheme}

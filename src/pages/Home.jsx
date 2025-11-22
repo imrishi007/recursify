@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Hero from '../components/Hero/Hero';
 import FilterBar from '../components/FilterBar/FilterBar';
 import ProblemCard from '../components/ProblemCard/ProblemCard';
+import ScrollToTop from '../components/ScrollToTop/ScrollToTop';
 import { blogPosts, filterPosts } from '../data/blogPosts';
 import './Home.css';
 
@@ -52,6 +53,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <ScrollToTop />
     </div>
   );
 };
