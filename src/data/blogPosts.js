@@ -87,6 +87,17 @@ export const blogPosts = [
     tags: ["String", "Hash Table", "Prefix Sum"],
     readTime: 8,
     leetcodeUrl: "https://leetcode.com/problems/unique-length-3-palindromic-subsequences"
+  },
+  {
+    id: 9,
+    number: 1262,
+    title: "Greatest Sum Divisible by Three",
+    difficulty: "Medium",
+    excerpt: "Find the maximum sum of array elements that is divisible by three using a remainder-based greedy approach.",
+    slug: "greatest-sum-divisible-by-three",
+    tags: ["Array", "Math", "Greedy"],
+    readTime: 7,
+    leetcodeUrl: "https://leetcode.com/problems/greatest-sum-divisible-by-three"
   }
 ];
 

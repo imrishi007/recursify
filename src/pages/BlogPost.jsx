@@ -15,6 +15,7 @@ import SudokuSolver from './posts/sudoku-solver';
 import IncrementSubmatricesByOne from './posts/increment-submatrices-by-one';
 import ZigZagConversion from './posts/zigzag-conversion';
 import UniqueLength3Palindrome from './posts/unique-length-3-palindrome';
+import GreatestSumDivisibleByThree from './posts/greatest-sum-divisible-by-three';
 
 // Map slugs to components
 const postComponents = {
@@ -26,6 +27,7 @@ const postComponents = {
   'increment-submatrices-by-one': IncrementSubmatricesByOne,
   'zigzag-conversion': ZigZagConversion,
   'unique-length-3-palindrome': UniqueLength3Palindrome,
+  'greatest-sum-divisible-by-three': GreatestSumDivisibleByThree,
 };
 
 const BlogPost = () => {
